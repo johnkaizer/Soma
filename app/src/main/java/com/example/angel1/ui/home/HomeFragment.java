@@ -41,15 +41,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        //Image slider
-        ImageSlider imageSlider = root.findViewById(R.id.imageView2);
-        ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.scholar0,ScaleTypes.CENTER_INSIDE));
-        slideModels.add(new SlideModel(R.drawable.kenya1, ScaleTypes.CENTER_INSIDE));
-        slideModels.add(new SlideModel(R.drawable.scholar6, ScaleTypes.CENTER_INSIDE));
-        slideModels.add(new SlideModel(R.drawable.scholar4, ScaleTypes.CENTER_INSIDE));
-        imageSlider.setImageList(slideModels,ScaleTypes.CENTER_CROP);
-        scholarshipRv=root.findViewById(R.id.scholarRec);
+        scholarshipRv= root.findViewById(R.id.scholarRec);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Scholarships");
         scholarshipRv.setHasFixedSize(true);

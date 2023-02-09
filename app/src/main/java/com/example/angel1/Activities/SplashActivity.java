@@ -1,4 +1,4 @@
-package com.example.angel1;
+package com.example.angel1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import com.example.angel1.Auth.LoginActivity;
+import com.example.angel1.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -69,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Description eg this scholarship is eligible to.."
-            android:inputType="phone"
             android:background="@drawable/edit_back"
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
@@ -93,7 +92,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_back"
             android:hint=" Message eg Goodluck in your application"
-            android:inputType="textEmailAddress"
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
     </com.google.android.material.textfield.TextInputLayout>

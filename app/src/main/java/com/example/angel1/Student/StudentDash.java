@@ -32,13 +32,13 @@ public class StudentDash extends AppCompatActivity {
         binding = ActivityStudentDashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarStudentDash.toolbar);
+        setSupportActionBar(binding.appBarStudentDash.toolbar1);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_application, R.id.nav_documents)
+                R.id.nav_home, R.id.nav_application, R.id.nav_documents, R.id.nav_approved)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_student_dash);
@@ -66,6 +66,7 @@ public class StudentDash extends AppCompatActivity {
             return true;
         }
         else if (id == R.id.action_help){
+            startActivity(new Intent(StudentDash.this, Help.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

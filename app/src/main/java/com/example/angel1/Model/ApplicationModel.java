@@ -1,34 +1,42 @@
 package com.example.angel1.Model;
 
 public class ApplicationModel {
-    String userId;
+    String appTitle;
+    String appDeadline;
     String passportUrl;
-    String name;
-    String age;
-    String email;
-    String school;
-    String feePdf;
+    String stdName;
+    String stdage;
+    String stdEmail;
+    String stdSchool;
 
     //empty constructor for retrieving data from firebase
     public ApplicationModel() {
     }
 
-    public ApplicationModel(String userId, String passportUrl, String name, String age, String email, String school, String feePdf) {
-        this.userId = userId;
+    public ApplicationModel(String appTitle, String appDeadline, String passportUrl, String stdName, String stdage, String stdEmail, String stdSchool) {
+        this.appTitle = appTitle;
+        this.appDeadline = appDeadline;
         this.passportUrl = passportUrl;
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.school = school;
-        this.feePdf = feePdf;
+        this.stdName = stdName;
+        this.stdage = stdage;
+        this.stdEmail = stdEmail;
+        this.stdSchool = stdSchool;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getAppTitle() {
+        return appTitle;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setAppTitle(String appTitle) {
+        this.appTitle = appTitle;
+    }
+
+    public String getAppDeadline() {
+        return appDeadline;
+    }
+
+    public void setAppDeadline(String appDeadline) {
+        this.appDeadline = appDeadline;
     }
 
     public String getPassportUrl() {
@@ -39,43 +47,35 @@ public class ApplicationModel {
         this.passportUrl = passportUrl;
     }
 
-    public String getName() {
-        return name;
+    public String getStdName() {
+        return stdName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStdName(String stdName) {
+        this.stdName = stdName;
     }
 
-    public String getAge() {
-        return age;
+    public String getStdage() {
+        return stdage;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setStdage(String stdage) {
+        this.stdage = stdage;
     }
 
-    public String getEmail() {
-        return email;
+    public String getStdEmail() {
+        return stdEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setStdEmail(String stdEmail) {
+        this.stdEmail = stdEmail;
     }
 
-    public String getSchool() {
-        return school;
+    public String getStdSchool() {
+        return stdSchool;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
-    public String getFeePdf() {
-        return feePdf;
-    }
-
-    public void setFeePdf(String feePdf) {
-        this.feePdf = feePdf;
+    public void setStdSchool(String stdSchool) {
+        this.stdSchool = stdSchool;
     }
 }

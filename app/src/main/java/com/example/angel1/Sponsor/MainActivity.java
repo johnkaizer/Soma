@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
-                case R.id.home:
+                case R.id.homeS:
                     replaceFragment(new SponsorHomeFragment());
                     break;
                 case R.id.applic:

@@ -81,11 +81,11 @@
             app:layout_constraintTop_toTopOf="@+id/textView8" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteBtn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/apply"
             android:background="@drawable/btn_back1"
-            android:text="Apply Now"
+            android:text="Delete"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
