@@ -131,6 +131,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView22" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"

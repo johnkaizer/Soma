@@ -12,14 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.angel1.Adapters.AdminScholarshipAdapter;
-import com.example.angel1.Adapters.ScholarshipAdapter;
-import com.example.angel1.Auth.LoginActivity;
-import com.example.angel1.Auth.RegisterActivity;
+import com.example.angel1.Adapters.AdminApplicationAdapter;
+import com.example.angel1.Adapters.AdminScholarAdapter;
+import com.example.angel1.Model.ApplicationModel;
 import com.example.angel1.Model.ScholarshipsModel;
 import com.example.angel1.R;
-import com.example.angel1.databinding.FragmentApplicationBinding;
 import com.example.angel1.databinding.FragmentSponsorHomeBinding;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -32,9 +31,7 @@ public class SponsorHomeFragment extends Fragment {
 
     private FragmentSponsorHomeBinding binding;
     RecyclerView scholarRv;
-    ArrayList<ScholarshipsModel> list;
-    AdminScholarshipAdapter adminScholarshipAdapter ;
-    Query databaseReference;
+    AdminScholarAdapter adminScholarAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,29 +40,15 @@ public class SponsorHomeFragment extends Fragment {
         binding = FragmentSponsorHomeBinding.inflate(inflater, container,  false);
         View root = binding.getRoot();
         scholarRv= root.findViewById(R.id.scholarshipRv);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Scholarships");
-        scholarRv.setHasFixedSize(true);
-        scholarRv.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        list = new ArrayList<>();
-        adminScholarshipAdapter = new AdminScholarshipAdapter(getContext(), list);
-        scholarRv.setAdapter(adminScholarshipAdapter);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
+        layoutManager.setReverseLayout(true);
+        scholarRv.setLayoutManager(layoutManager);
+        FirebaseRecyclerOptions<ScholarshipsModel> context = new FirebaseRecyclerOptions.Builder<ScholarshipsModel>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("Scholarships"),ScholarshipsModel.class)
+                .build();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-
-                    ScholarshipsModel scholarshipsModel  = dataSnapshot.getValue(ScholarshipsModel.class);
-                    list.add(scholarshipsModel);
-                }
-                adminScholarshipAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        adminScholarAdapter = new AdminScholarAdapter(context,getContext());
+        scholarRv.setAdapter(adminScholarAdapter);
 
         binding.addScholarship.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,5 +57,15 @@ public class SponsorHomeFragment extends Fragment {
             }
         });
         return root;
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adminScholarAdapter.startListening();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        adminScholarAdapter.stopListening();
     }
 }

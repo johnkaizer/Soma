@@ -52,7 +52,7 @@ public class Approved extends Fragment {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userIdentity = user.getEmail();
         approved=root.findViewById(R.id.approvedRec);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Approved").orderByChild("UserId").startAt(userIdentity).endAt(userIdentity);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Approved").orderByChild("stdEmail").startAt(userIdentity).endAt(userIdentity);
         approved.setHasFixedSize(true);
         approved.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
         list = new ArrayList<>();

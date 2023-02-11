@@ -51,7 +51,7 @@ public class ApplicationFragment extends Fragment {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userIdentity = user.getUid();
         appRec=root.findViewById(R.id.myAppRec);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Applications").orderByChild("UserId").startAt(userIdentity).endAt(userIdentity);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Applications").orderByChild("User").startAt(userIdentity).endAt(userIdentity);
         appRec.setHasFixedSize(true);
         appRec.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
         list = new ArrayList<>();

@@ -7,13 +7,24 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_sponsor_dash">SponsorDash</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Parents Working
+    <string-array name="pWorking">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Just One</item>
+    </string-array>
+    //Orphan
+    <string-array name="Orphan">
+        <item>No</item>
+        <item>Yes</item>
+        <item>Half an Orphan</item>
+    </string-array>
+    //Disabilities
+    <string-array name="Disabilities">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
 </resources>
