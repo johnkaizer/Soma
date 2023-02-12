@@ -39,29 +39,6 @@ public class AdminApplicationAdapter extends FirebaseRecyclerAdapter<Application
         holder.name.setText(model.getStdName());
         holder.email.setText(model.getStdEmail());
         holder.school.setText(model.getStdSchool());
-        holder.confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Approved");
-                String AppTitle = holder.title.getText().toString();
-                String stdName = holder.name.getText().toString();
-                String stdEmail = holder.email.getText().toString();
-                String stdSchool = holder.school.getText().toString();
-
-                ApprovedModel approvedModel = new ApprovedModel(AppTitle, stdName, stdEmail, stdSchool);
-                databaseReference.push().setValue(approvedModel);
-                Toast.makeText(context, "Confirmed successfully", Toast.LENGTH_SHORT).show();
-                FirebaseDatabase.getInstance().getReference().child("Applications")
-                        .child(getRef(i).getKey())
-                        .removeValue()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                            }
-                        });
-
-            }
-        });
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +64,7 @@ public class AdminApplicationAdapter extends FirebaseRecyclerAdapter<Application
 
     public class ApplicationViewHolder extends RecyclerView.ViewHolder {
         TextView title, deadline, name, email, school, uid;
-        AppCompatButton confirm, delete;
+        AppCompatButton delete;
 
         public ApplicationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -97,7 +74,6 @@ public class AdminApplicationAdapter extends FirebaseRecyclerAdapter<Application
             email = itemView.findViewById(R.id.textView19);
             school = itemView.findViewById(R.id.textView21);
             school = itemView.findViewById(R.id.textView21);
-            confirm = itemView.findViewById(R.id.appCompatButton3);
             delete = itemView.findViewById(R.id.appCompatButton);
         }
     }

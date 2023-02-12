@@ -1,5 +1,7 @@
 package com.example.angel1.Student;
 
+import static com.example.angel1.DBmain.TABLENAME;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +9,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -22,7 +26,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.angel1.DBmain;
 import com.example.angel1.R;
+import com.example.angel1.Sponsor.MainActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -55,10 +61,15 @@ public class ApplicationActivity extends AppCompatActivity {
     ProgressBar progressBar;
     StorageReference storageRef;
     private Spinner spinner,spinner1,spinner2;
+    //Sqlite
+    DBmain dBmain;
+    int id = 0;
+    SQLiteDatabase sqLiteDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application);
+        dBmain = new DBmain(this);
         title = findViewById(R.id.appTitle);
         posted = findViewById(R.id.stdName);
         deadline = findViewById(R.id.stdSch);
@@ -108,6 +119,7 @@ public class ApplicationActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveDataSQL();
                 final String studentName= nameEt.getText().toString();
                 final String studentAge=ageEt.getText().toString();
                 final String studentEmail=emailEt.getText().toString();
@@ -139,6 +151,23 @@ public class ApplicationActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void saveDataSQL() {
+        ContentValues cv = new ContentValues();
+        cv.put("stdName", nameEt.getText().toString());
+        cv.put("appTitle", title.getText().toString());
+        cv.put("stdEmail", emailEt.getText().toString());
+        cv.put("stdSchool", schoolEt.getText().toString());
+        cv.put("stdFee", feesEt.getText().toString());
+        cv.put("stdParents", spinner.getSelectedItem().toString());
+        cv.put("stdOrphan", spinner1.getSelectedItem().toString());
+        cv.put("stdDisabilities", spinner2.getSelectedItem().toString());
+        sqLiteDatabase = dBmain.getWritableDatabase();
+        Long recinsert = sqLiteDatabase.insert(TABLENAME, null, cv);
+        if (recinsert != null) {
+            Toast.makeText(ApplicationActivity.this, "Details entered sql successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void saveApplication(String studentName, String studentAge, String studentEmail, String studentSchool, String user,String applicationTitle,String studentDeadline,String studentFee,String stdParentsWorking,String stdOrphan,String stdSiblings,String stdDisabilities) {
@@ -174,8 +203,12 @@ public class ApplicationActivity extends AppCompatActivity {
                                 schoolEt.setText("");
                                 nameEt.setText("");
                                 ageEt.setText("");
+                                feesEt.setText("");
+                                siblingsEt.setText("");
                                 imageView.setImageResource(R.drawable.image_24);
                                 progressBar.setVisibility(View.GONE);
+                                startActivity(new Intent(ApplicationActivity.this, MainActivity.class));
+                                finish();
 
                             }
                         });

@@ -12,8 +12,8 @@
 
     //Parents Working
     <string-array name="pWorking">
-        <item>Yes</item>
-        <item>No</item>
+        <item>Yes All work</item>
+        <item>None works</item>
         <item>Just One</item>
     </string-array>
     //Orphan

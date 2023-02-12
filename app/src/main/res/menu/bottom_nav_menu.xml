@@ -11,5 +11,5 @@
     <item
         android:id="@+id/profile"
         android:icon="@drawable/person_24"
-        android:title="Profile" />
+        android:title="Accepted" />
 </menu>
