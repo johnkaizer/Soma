@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.angel1.EditProfile;
 import com.example.angel1.Model.User;
 import com.example.angel1.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,20 +48,22 @@ public class ProfileActivity extends AppCompatActivity {
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogPlus dialogPlus = DialogPlus.newDialog(ProfileActivity.this)
-                        .setGravity(Gravity.CENTER)
-                        .setMargin(50,0,50,0)
-                        .setContentHolder(new ViewHolder(R.layout.edit))
-                        .setExpanded(false)
-                        .create();
+                final TextView fullNameTxt = findViewById(R.id.cust_name);
+                final TextView emailTxt = findViewById(R.id.cust_email);
+                final TextView phoneTxt =findViewById(R.id.cust_phone);
+                final TextView passwordTxt =findViewById(R.id.password);
 
-                View holderView  = (LinearLayout) dialogPlus.getHolderView();
-                EditText fName= holderView.findViewById(R.id.editText2);
-                EditText fEmail= holderView.findViewById(R.id.editText3);
-                EditText fPhone= holderView.findViewById(R.id.editText4);
-                EditText fPass= holderView.findViewById(R.id.editText5);
+                String name = fullNameTxt.getText().toString();
+                String email = emailTxt.getText().toString();
+                String phone = phoneTxt.getText().toString();
+                String pass = passwordTxt.getText().toString();
 
-
+                Intent intent = new Intent(ProfileActivity.this, EditProfile.class);
+                intent.putExtra("uname", name);
+                intent.putExtra("uemail", email);
+                intent.putExtra("uphone", phone);
+                intent.putExtra("upass", pass);
+                startActivity(intent);
 
             }
         });

@@ -1,6 +1,4 @@
 
-@
-local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
 q
 Aapp/src/main/java/com/example/angel1/Model/ScholarshipsModel.java,e\2\e252506ea57dd11fa2be942f61156545ad616504
 f
