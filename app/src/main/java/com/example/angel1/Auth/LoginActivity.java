@@ -19,9 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.angel1.Student.MoreUserDetails;
 import com.example.angel1.R;
 import com.example.angel1.Sponsor.MainActivity;
-import com.example.angel1.Student.StudentDash;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (mAuth.getCurrentUser().isEmailVerified()){
-                        startActivity(new Intent(LoginActivity.this, StudentDash.class));
+                        startActivity(new Intent(LoginActivity.this, MoreUserDetails.class));
                         Toast.makeText(LoginActivity.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                         finish();
                     }else {
