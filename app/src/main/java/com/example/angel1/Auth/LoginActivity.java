@@ -3,11 +3,14 @@ package com.example.angel1.Auth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
@@ -34,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     boolean passwordVisible;
     TextView signUp;
     CheckBox admin;
+    AppCompatButton SignBtn;
 
     private FirebaseAuth mAuth;
     @Override
@@ -45,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         EditTextPassword = findViewById(R.id.editText3);
         progressBar = findViewById(R.id.progressBar);
         admin =findViewById(R.id.checkBox);
+        SignBtn = findViewById(R.id.appCompatButton);
         EditTextPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -75,13 +80,17 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
+        SignBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                finish();
+            }
+        });
 
-    public void sign_Up(View view) {
-        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-        finish();
+        EditTextEmail.addTextChangedListener(textWatcher);
+        EditTextPassword.addTextChangedListener(textWatcher);
     }
-
     public void login(View view) {
         if (admin.isChecked()){
             String email1 =EditTextEmail.getText().toString().trim();
@@ -139,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (mAuth.getCurrentUser().isEmailVerified()){
-                        startActivity(new Intent(LoginActivity.this, MoreUserDetails.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         Toast.makeText(LoginActivity.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                         finish();
                     }else {
@@ -194,4 +203,27 @@ public class LoginActivity extends AppCompatActivity {
         }
         dialog.show();
     }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+           if (s.toString().trim().length() >0){
+               SignBtn.setVisibility(View.GONE);
+
+            }else{
+               SignBtn.setVisibility(View.VISIBLE);
+            }
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }

@@ -67,4 +67,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-database:20.1.0'
 
+    //lottie animation
+    implementation "com.airbnb.android:lottie:3.4.0"
+
 }

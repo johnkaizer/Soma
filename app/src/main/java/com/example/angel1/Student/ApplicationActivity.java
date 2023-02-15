@@ -1,20 +1,15 @@
 package com.example.angel1.Student;
 
-import static com.example.angel1.DBmain.TABLENAME;
+import static com.example.angel1.Adapters.DBmain.TABLENAME;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.angel1.DBmain;
+import com.example.angel1.Adapters.DBmain;
 import com.example.angel1.R;
 import com.example.angel1.Sponsor.MainActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,7 +34,6 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 
 public class ApplicationActivity extends AppCompatActivity {

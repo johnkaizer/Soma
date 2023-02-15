@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.angel1.Auth.LoginActivity;
 import com.example.angel1.Model.DetailsModel;
 import com.example.angel1.R;
 import com.google.firebase.database.DatabaseReference;
@@ -30,17 +31,6 @@ public class MoreUserDetails extends AppCompatActivity {
         genderEt = findViewById(R.id.editText6);
         nameEt = findViewById(R.id.editText7);
         submitBtn = findViewById(R.id.SubButton);
-        SharedPreferences preference= getSharedPreferences("PREFERENCE",MODE_PRIVATE);
-        String FirstTime= preference.getString("FirstTimeInstall","");
-        if (FirstTime.equals("Yes")){
-            Intent intent=new Intent(   MoreUserDetails.this, StudentDash.class);
-            startActivity(intent);
-            finish();
-        }else {
-            SharedPreferences.Editor editor= preference.edit();
-            editor.putString("FirstTimeInstall","Yes");
-            editor.apply();
-        }
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +77,8 @@ public class MoreUserDetails extends AppCompatActivity {
 
         DetailsModel details = new DetailsModel(UserAddress,UserHome,UserCounty,UserGender,UserName);
         dataRef.push().setValue(details);
-        Toast.makeText(this, "Successfully submitted", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MoreUserDetails.this, StudentDash.class));
+        Toast.makeText(this, "Successfully submitted, please verify email to login", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MoreUserDetails.this, LoginActivity.class));
+        finish();
     }
 }

@@ -121,7 +121,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_back"
-        android:onClick="sign_In"
         android:padding="14dp"
         android:text="Login"
         android:textAllCaps="false"

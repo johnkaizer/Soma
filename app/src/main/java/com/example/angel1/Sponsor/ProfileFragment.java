@@ -1,6 +1,6 @@
 package com.example.angel1.Sponsor;
 
-import static com.example.angel1.DBmain.TABLENAME;
+import static com.example.angel1.Adapters.DBmain.TABLENAME;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.angel1.Adapters.ApprovedAdapter;
-import com.example.angel1.DBmain;
+import com.example.angel1.Adapters.DBmain;
 import com.example.angel1.Model.ApprovedModel;
 import com.example.angel1.R;
 

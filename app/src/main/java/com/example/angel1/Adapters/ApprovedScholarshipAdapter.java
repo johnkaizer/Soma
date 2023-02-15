@@ -10,19 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.angel1.Model.ApprovedModel;
+import com.example.angel1.Model.ConfirmedModel;
 import com.example.angel1.R;
 
 import java.util.ArrayList;
 
 public class ApprovedScholarshipAdapter extends RecyclerView.Adapter<ApprovedScholarshipAdapter.ViewHolder> {
 
-    public ApprovedScholarshipAdapter(Context context, ArrayList<ApprovedModel> list) {
+    public ApprovedScholarshipAdapter(Context context, ArrayList<ConfirmedModel> list) {
         this.context = context;
         this.list = list;
     }
 
     Context context;
-    ArrayList<ApprovedModel>list;
+    ArrayList<ConfirmedModel> list;
     @NonNull
     @Override
     public ApprovedScholarshipAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

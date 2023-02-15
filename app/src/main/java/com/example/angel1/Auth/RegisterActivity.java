@@ -2,9 +2,12 @@ package com.example.angel1.Auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.angel1.Model.User;
 import com.example.angel1.R;
+import com.example.angel1.Student.MoreUserDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText editTextName,editTextEmail,editTextPhone, editTextPassword;
     private ProgressBar progressBar;
+    AppCompatButton LogInBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +39,21 @@ public class RegisterActivity extends AppCompatActivity {
         editTextPhone = findViewById(R.id.editText4);
         editTextPassword = findViewById(R.id.editText5);
         progressBar = findViewById(R.id.progressBar);
+        LogInBtn = findViewById(R.id.appCompatButton3);
 
         mAuth = FirebaseAuth.getInstance();
+
+        LogInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
+        editTextEmail.addTextChangedListener(textWatcher);
+        editTextPhone.addTextChangedListener(textWatcher);
+        editTextPassword.addTextChangedListener(textWatcher);
+        editTextName.addTextChangedListener(textWatcher);
     }
 
     public void home(View view) {
@@ -92,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                 mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
-                                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                                        startActivity(new Intent(RegisterActivity.this, MoreUserDetails.class));
                                                         Toast.makeText(RegisterActivity.this,"Registered successfully!, Please verify email",Toast.LENGTH_SHORT).show();
                                                         finish();
                                                     }
@@ -111,10 +129,25 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
     }
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-    public void sign_In(View view) {
-        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-        finish();
+        }
 
-    }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (s.toString().trim().length() >0){
+                LogInBtn.setVisibility(View.GONE);
+
+            }else{
+                LogInBtn.setVisibility(View.VISIBLE);
+            }
+
+        }
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }

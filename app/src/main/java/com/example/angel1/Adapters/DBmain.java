@@ -1,4 +1,4 @@
-package com.example.angel1;
+package com.example.angel1.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -17,6 +17,7 @@ import com.example.angel1.Adapters.ApplicationAdapter;
 import com.example.angel1.Adapters.ApprovedScholarshipAdapter;
 import com.example.angel1.Model.ApplicationModel;
 import com.example.angel1.Model.ApprovedModel;
+import com.example.angel1.Model.ConfirmedModel;
 import com.example.angel1.R;
 import com.example.angel1.databinding.FragmentApplicationBinding;
 import com.example.angel1.databinding.FragmentApprovedBinding;
@@ -33,7 +34,7 @@ import java.util.ArrayList;
 
 public class Approved extends Fragment {
     ApprovedScholarshipAdapter approvedScholarshipAdapter;
-    ArrayList<ApprovedModel> list;
+    ArrayList<ConfirmedModel> list;
     Query databaseReference;
     RecyclerView approved;
     private FirebaseUser user;
@@ -52,7 +53,7 @@ public class Approved extends Fragment {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userIdentity = user.getEmail();
         approved=root.findViewById(R.id.approvedRec);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Approved").orderByChild("stdEmail").startAt(userIdentity).endAt(userIdentity);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Confirmed").orderByChild("stdEmail").startAt(userIdentity).endAt(userIdentity);
         approved.setHasFixedSize(true);
         approved.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
         list = new ArrayList<>();
@@ -64,8 +65,8 @@ public class Approved extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                    ApprovedModel approvedModel   = dataSnapshot.getValue(ApprovedModel.class);
-                    list.add(approvedModel);
+                    ConfirmedModel confirmedModel   = dataSnapshot.getValue(ConfirmedModel.class);
+                    list.add(confirmedModel);
                 }
                 approvedScholarshipAdapter.notifyDataSetChanged();
             }
