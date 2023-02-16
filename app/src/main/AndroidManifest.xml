@@ -60,8 +60,7 @@
             android:theme="@style/Theme.Angel1.NoActionBar" />
         <activity
             android:name=".Sponsor.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Angel1.NoActionBar"/>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

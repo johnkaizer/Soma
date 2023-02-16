@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.angel1.Student.MoreUserDetails;
 import com.example.angel1.R;
 import com.example.angel1.Sponsor.MainActivity;
+import com.example.angel1.Student.StudentDash;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -113,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             if ("admin@gmail.com".equals(email1) && "A1234".equals(password1)){
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
                 Toast.makeText(LoginActivity.this,"Admin Logged in successfully ",Toast.LENGTH_SHORT).show();
 
             }else{
@@ -148,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (mAuth.getCurrentUser().isEmailVerified()){
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, StudentDash.class));
                         Toast.makeText(LoginActivity.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                         finish();
                     }else {
@@ -212,11 +214,11 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-           if (s.toString().trim().length() >0){
-               SignBtn.setVisibility(View.GONE);
+            if (s.toString().trim().length() >0){
+                SignBtn.setVisibility(View.GONE);
 
             }else{
-               SignBtn.setVisibility(View.VISIBLE);
+                SignBtn.setVisibility(View.VISIBLE);
             }
 
         }
