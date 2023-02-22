@@ -23,8 +23,6 @@ m
 =app/src/main/java/com/example/angel1/Student/EditProfile.java,c\9\c9143636a7f9313e786cd097ff07b711f86e4465
 m
 =app/src/main/java/com/example/angel1/Model/ApprovedModel.java,d\e\def04eae01e2d43858734dda5e93b9a9f8aa7938
-n
->app/src/main/java/com/example/angel1/ui/home/HomeFragment.java,9\c\9c834a5cd9a33a46a147b40db6b04bc40b4ce38f
 s
 Capp/src/main/java/com/example/angel1/Activities/SplashActivity.java,0\e\0e65b93ac54140d9c150a28e93555522123b0978
 }

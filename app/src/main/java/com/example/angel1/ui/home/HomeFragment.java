@@ -20,6 +20,7 @@ import com.example.angel1.Adapters.ScholarshipAdapter;
 import com.example.angel1.Model.ScholarshipsModel;
 import com.example.angel1.R;
 import com.example.angel1.databinding.FragmentHomeBinding;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -36,13 +37,15 @@ public class HomeFragment extends Fragment {
     ArrayList<ScholarshipsModel> list;
     ScholarshipAdapter scholarshipAdapter;
     Query databaseReference;
+    ShimmerFrameLayout shimmerFrameLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         scholarshipRv= root.findViewById(R.id.scholarRec);
-
+        shimmerFrameLayout = root.findViewById(R.id.shimmer);
+        shimmerFrameLayout.startShimmer();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Scholarships");
         scholarshipRv.setHasFixedSize(true);
         scholarshipRv.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL, false));
@@ -58,6 +61,9 @@ public class HomeFragment extends Fragment {
                     ScholarshipsModel scholarshipsModel  = dataSnapshot.getValue(ScholarshipsModel.class);
                     list.add(scholarshipsModel);
                 }
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
+                scholarshipRv.setVisibility(View.VISIBLE);
                 scholarshipAdapter.notifyDataSetChanged();
             }
 
