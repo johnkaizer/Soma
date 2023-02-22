@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MoreUserDetails extends AppCompatActivity {
-    EditText addressEt,homeEt, countyEt,genderEt,nameEt;
+    EditText addressEt,homeEt, countyEt,genderEt,nameEt,emailEt;
     AppCompatButton submitBtn;
     DatabaseReference dataRef;
     @Override
@@ -30,6 +30,7 @@ public class MoreUserDetails extends AppCompatActivity {
         countyEt = findViewById(R.id.editText5);
         genderEt = findViewById(R.id.editText6);
         nameEt = findViewById(R.id.editText7);
+        emailEt = findViewById(R.id.editText8);
         submitBtn = findViewById(R.id.SubButton);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,7 @@ public class MoreUserDetails extends AppCompatActivity {
                 String county = countyEt.getText().toString().trim();
                 String gender = genderEt.getText().toString().trim();
                 String name = nameEt.getText().toString().trim();
+                String email = emailEt.getText().toString().trim();
                 if (address.isEmpty()) {
                     addressEt.setError("home address is required!!");
                     addressEt.requestFocus();
@@ -64,6 +66,11 @@ public class MoreUserDetails extends AppCompatActivity {
                     nameEt.requestFocus();
                     return;
                 }
+                if (home.isEmpty()) {
+                    emailEt.setError("email is required!!");
+                    emailEt.requestFocus();
+                    return;
+                }
                 saveData();
             }
         });
@@ -74,8 +81,9 @@ public class MoreUserDetails extends AppCompatActivity {
         String UserCounty =  countyEt.getText().toString();
         String UserGender =  genderEt.getText().toString();
         String UserName =  nameEt.getText().toString();
+        String UserEmail =  emailEt.getText().toString();
 
-        DetailsModel details = new DetailsModel(UserAddress,UserHome,UserCounty,UserGender,UserName);
+        DetailsModel details = new DetailsModel(UserAddress,UserHome,UserCounty,UserGender,UserName,UserEmail);
         dataRef.push().setValue(details);
         Toast.makeText(this, "Successfully submitted, please verify email to login", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(MoreUserDetails.this, LoginActivity.class));

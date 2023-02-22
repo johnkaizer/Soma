@@ -3,13 +3,21 @@ package com.example.angel1.Student;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.angel1.Adapters.ApprovedScholarshipAdapter;
+import com.example.angel1.Adapters.MoreDetailsAdapter;
+import com.example.angel1.Model.ConfirmedModel;
+import com.example.angel1.Model.DetailsModel;
 import com.example.angel1.Model.User;
 import com.example.angel1.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,15 +26,22 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
-    private String userID;
+    private String userID, userIdentity;
     ProgressBar progressBar;
 
     AppCompatButton editBtn;
+    MoreDetailsAdapter moreDetailsAdapter;
+    ArrayList<DetailsModel> list;
+    Query databaseReference;
+    RecyclerView moreRV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +50,11 @@ public class ProfileActivity extends AppCompatActivity {
         progressBar =findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
         editBtn = findViewById(R.id.edit);
+        moreRV=findViewById(R.id.moreRv);
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
+        userIdentity = user.getEmail();
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +103,29 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("MoreUserDetails").orderByChild("stdEmail").startAt(userIdentity).endAt(userIdentity);
+        moreRV.setHasFixedSize(true);
+        moreRV.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
+        list = new ArrayList<>();
+        moreDetailsAdapter = new MoreDetailsAdapter(this,list);
+        moreRV.setAdapter(moreDetailsAdapter);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                    DetailsModel detailsModel   = dataSnapshot.getValue(DetailsModel.class);
+                    list.add(detailsModel);
+                }
+                moreDetailsAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this,"Sorry could not fetch anything",Toast.LENGTH_SHORT).show();
             }
         });
     }

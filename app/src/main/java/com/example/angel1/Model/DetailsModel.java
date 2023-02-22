@@ -7,16 +7,18 @@ public class DetailsModel {
     String uCounty;
     String uGender;
     String uName;
+    String uEmail;
 
     public DetailsModel() {
     }
 
-    public DetailsModel(String uAddress, String uHome, String uCounty, String uGender, String uName) {
+    public DetailsModel(String uAddress, String uHome, String uCounty, String uGender, String uName, String uEmail) {
         this.uAddress = uAddress;
         this.uHome = uHome;
         this.uCounty = uCounty;
         this.uGender = uGender;
         this.uName = uName;
+        this.uEmail = uEmail;
     }
 
     public String getuAddress() {
@@ -57,5 +59,13 @@ public class DetailsModel {
 
     public void setuName(String uName) {
         this.uName = uName;
+    }
+
+    public String getuEmail() {
+        return uEmail;
+    }
+
+    public void setuEmail(String uEmail) {
+        this.uEmail = uEmail;
     }
 }

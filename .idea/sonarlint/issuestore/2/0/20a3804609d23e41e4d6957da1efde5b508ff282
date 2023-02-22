@@ -1,0 +1,23 @@
+
+C
+java:S16046"(Make this anonymous inner class a lambda(¹ı¬Ëşÿÿÿÿ
+>
+java:S1604W"(Make this anonymous inner class a lambda(öØ¡À
+C
+java:S1604e"(Make this anonymous inner class a lambda( ú±³úÿÿÿÿ
+h	java:S116&"SRename this field "pdf_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´á®À
+U
+java:S1161+":Add the "@Override" annotation above this method signature(î•Éğûÿÿÿÿ
+T
+java:S1874E">Remove this use of "startActivityForResult"; it is deprecated.(Øˆ¼
+e
+java:S1874I"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(™­²©ùÿÿÿÿ
+S
+java:S1874J"8Remove this use of "onActivityResult"; it is deprecated.(ß¬©úÿÿÿÿ
+h	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş¡¿µüÿÿÿÿ
+L
+java:S1874Q"6Remove this use of "ProgressDialog"; it is deprecated.(­Ôƒâ
+L
+java:S1874Q"6Remove this use of "ProgressDialog"; it is deprecated.(­Ôƒâ
+H
+java:S1874i"2Remove this use of "setMessage"; it is deprecated.(Ãàşï
