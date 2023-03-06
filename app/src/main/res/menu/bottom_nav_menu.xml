@@ -9,7 +9,11 @@
         android:icon="@drawable/people_24"
         android:title="Applications" />
     <item
+        android:id="@+id/accepted"
+        android:icon="@drawable/approval_24"
+        android:title="Accepted" />
+    <item
         android:id="@+id/profile"
         android:icon="@drawable/person_24"
-        android:title="Accepted" />
+        android:title="Profile" />
 </menu>

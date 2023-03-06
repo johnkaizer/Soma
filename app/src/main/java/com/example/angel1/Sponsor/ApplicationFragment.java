@@ -23,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ApplicationFragment extends Fragment {
     RecyclerView applicationRV;
     AdminApplicationAdapter applicationAdminAdapter;
-    FragmentApplicationBinding  binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

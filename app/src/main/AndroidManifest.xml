@@ -14,7 +14,7 @@
         <activity
             android:name=".Student.MoreUserDetails"
             android:exported="false"
-            android:theme="@style/Theme.Angel1.NoActionBar"/>
+            android:theme="@style/Theme.Angel1.NoActionBar" />
         <activity
             android:name=".Student.EditProfile"
             android:exported="false"

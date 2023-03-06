@@ -36,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.applic:
                     replaceFragment(new ApplicationFragment());
                     break;
-                case R.id.profile:
+                case R.id.accepted:
                     replaceFragment(new ProfileFragment());
+                    break;
+                case R.id.profile:
+                    replaceFragment(new AdminProfileFragment());
                     break;
 
             }
@@ -65,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

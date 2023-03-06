@@ -1,0 +1,16 @@
+
+k	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—úþšùÿÿÿÿ
+f	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŠŽ¾
+k	java:S117N"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùà¦ùüÿÿÿÿ
+f	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’°Ô
+f	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ ‹³
+C
+java:S16048"(Make this anonymous inner class a lambda(í™™»þÿÿÿÿ
+C
+java:S1604/"(Make this anonymous inner class a lambda(÷øÞ¯ýÿÿÿÿ
+>
+java:S1604C"(Make this anonymous inner class a lambda(Õ³þ•
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å‡¹Áøÿÿÿÿ
+]
+java:S1659"HDeclare "description" and all following declarations on a separate line.(’ÅòA
+c	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¨êŽ

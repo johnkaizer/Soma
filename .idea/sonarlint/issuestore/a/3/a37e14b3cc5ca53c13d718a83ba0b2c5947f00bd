@@ -1,0 +1,16 @@
+
+k	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½åì×şÿÿÿÿ
+k	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„‚şóùÿÿÿÿ
+k	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹·•†ÿÿÿÿÿ
+k	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»‹»úÿÿÿÿ
+k	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¹…„ûÿÿÿÿ
+m	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãƒú8¾ØˆÃç0
+>
+java:S1604#"(Make this anonymous inner class a lambda(‰äÕ
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡˜á±8šÀòşä0
+^
+java:S1659"CDeclare "homeEt" and all following declarations on a separate line.(¶ååûÿÿÿÿ
+[
+java:S1854+"9Remove this useless assignment to local variable "email".(¦‡Ò«øÿÿÿÿ8³•†Ãç0
+L
+java:S1481+"*Remove this unused "email" local variable.(¦‡Ò«øÿÿÿÿ8¸•†Ãç0

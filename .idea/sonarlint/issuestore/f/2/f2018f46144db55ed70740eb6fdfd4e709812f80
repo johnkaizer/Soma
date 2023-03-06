@@ -1,0 +1,19 @@
+
+C
+java:S1604/"(Make this anonymous inner class a lambda(­Í·Üùÿÿÿÿ
+C
+java:S1604o"(Make this anonymous inner class a lambda(¯«¬çþÿÿÿÿ
+C
+java:S1604k"(Make this anonymous inner class a lambda(Ÿ—ÙÎÿÿÿÿÿ
+>
+java:S1604c"(Make this anonymous inner class a lambda(³Ö×•
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÝÁÝíøÿÿÿÿ
+m	java:S116"SRename this field "LogInBtn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(± ªºþÿÿÿÿ
+e
+java:S1659"JDeclare "editTextEmail" and all following declarations on a separate line.(é€¸Ñüÿÿÿÿ
+F
+java:S1172<"+Remove this unused method parameter "view".(¥×ìýÿÿÿÿ
+˜
+java:S1186ˆ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
+˜
+java:S1186˜"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê

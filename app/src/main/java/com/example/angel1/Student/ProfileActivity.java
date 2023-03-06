@@ -105,7 +105,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("MoreUserDetails").orderByChild("stdEmail").startAt(userIdentity).endAt(userIdentity);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("MoreUserDetails").orderByChild("uEmail").startAt(userIdentity).endAt(userIdentity);
         moreRV.setHasFixedSize(true);
         moreRV.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
         list = new ArrayList<>();
