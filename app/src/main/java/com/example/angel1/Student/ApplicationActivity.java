@@ -160,7 +160,6 @@ public class ApplicationActivity extends AppCompatActivity {
         sqLiteDatabase = dBmain.getWritableDatabase();
         Long recinsert = sqLiteDatabase.insert(TABLENAME, null, cv);
         if (recinsert != null) {
-            Toast.makeText(ApplicationActivity.this, "Details entered sql successfully", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -201,7 +200,7 @@ public class ApplicationActivity extends AppCompatActivity {
                                 siblingsEt.setText("");
                                 imageView.setImageResource(R.drawable.image_24);
                                 progressBar.setVisibility(View.GONE);
-                                startActivity(new Intent(ApplicationActivity.this, MainActivity.class));
+                                startActivity(new Intent(ApplicationActivity.this, StudentDash.class));
                                 finish();
 
                             }

@@ -30,7 +30,7 @@ public class DBmain extends SQLiteOpenHelper {
     }
     public Cursor viewData(){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLENAME+" WHERE  stdParents = 'None works' AND stdOrphan= 'Yes' AND stdDisabilities = 'Yes' AND stdFee <='10000' ", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLENAME+" WHERE  stdParents = 'None works' AND stdOrphan= 'Yes' AND stdDisabilities = 'Yes' AND stdFee <='100000' ", null);
 
         return cursor;
     }

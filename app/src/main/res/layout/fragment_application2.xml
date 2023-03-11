@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:textAlignment="center"
-        android:title="Pending Applications"
+        android:title="Declined Applications"
         android:titleMarginStart="0dp"
         android:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

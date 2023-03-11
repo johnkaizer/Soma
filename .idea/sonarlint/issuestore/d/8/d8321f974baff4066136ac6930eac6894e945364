@@ -1,11 +1,0 @@
-
-†
-java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(áÔ×üÿÿÿÿ8òŠ¥¶ä0
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÔ×üÿÿÿÿ8ìŸµ¶ä0
-E
-java:S16040"(Make this anonymous inner class a lambda(İ¤Ğ8›Ù°€å0
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãîöÕ
-s
-java:S1172"QRemove these unused method parameters "application_admin_item", "sqLiteDatabase".(áÔ×üÿÿÿÿ8À¡µ¶ä0
-Z
-java:S1659K"EDeclare "deadline" and all following declarations on a separate line.(ûºÅ	

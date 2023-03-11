@@ -23,11 +23,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/app" />
+            android:textColor="@color/blue"
+            android:text="KENYANS FOR KENYANS"
+            android:textSize="25sp"
+            android:fontFamily="@font/jomolhari"
+            android:gravity="center_horizontal" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout

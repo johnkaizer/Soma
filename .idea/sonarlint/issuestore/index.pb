@@ -19,10 +19,6 @@ s
 Capp/src/main/java/com/example/angel1/Activities/SplashActivity.java,0\e\0e65b93ac54140d9c150a28e93555522123b0978
 n
 >app/src/main/java/com/example/angel1/Model/ConfirmedModel.java,4\c\4cd50141c2dde2f28ffd7cfb670cd78656023e6a
-i
-9app/src/main/java/com/example/angel1/Adapters/DBmain.java,3\1\315c1183b528a7292204b81a7dc7036f414cb355
-q
-Aapp/src/main/java/com/example/angel1/Sponsor/ProfileFragment.java,3\e\3e7b1508a78f26bd705c011b70311c88c37ee2b5
 p
 @app/src/main/java/com/example/angel1/Model/ApplicationModel.java,9\b\9bb8f0413294b53829e952ea3e1c9c86cbc901ef
 u
@@ -31,8 +27,6 @@ Eapp/src/main/java/com/example/angel1/Sponsor/SponsorHomeFragment.java,0\6\0685
 Kapp/src/main/java/com/example/angel1/Sponsor/CreateScholarshipActivity.java,5\e\5e7c830dc0fa37937b59df6a7c53f13f1c55f249
 v
 Fapp/src/main/java/com/example/angel1/Adapters/AdminScholarAdapter.java,a\d\adbdf9d9b14db53fd8540c94e426121d9874e15d
-n
->app/src/main/java/com/example/angel1/ui/Approved/Approved.java,7\c\7cd514329052f4f217848ac69d5042299539b1ee
 w
 G.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4,5\1\516e730a14e71f02fa73f3acd6dc7cea9a9fe002
 <
@@ -53,8 +47,6 @@ l
 <app/src/main/java/com/example/angel1/Model/DetailsModel.java,3\c\3c0f55ea3b1bc93a8ee650a271e9bc63d2e3339e
 u
 Eapp/src/main/java/com/example/angel1/Adapters/MoreDetailsAdapter.java,8\f\8f57c76ba358614704bef848bf27e4c4ec365a8a
-u
-Eapp/src/main/java/com/example/angel1/Student/ApplicationActivity.java,f\a\fa9a15561c1ae4883630df73cd1da6cc0a5b0092
 n
 >app/src/main/java/com/example/angel1/ui/home/HomeFragment.java,9\c\9c834a5cd9a33a46a147b40db6b04bc40b4ce38f
 @
@@ -65,5 +57,3 @@ l
 <app/src/main/java/com/example/angel1/Auth/LoginActivity.java,8\a\8aad9839fd2a9bfc6e5740b759595b11b2ad57ab
 m
 =app/src/main/java/com/example/angel1/Student/StudentDash.java,1\6\161629be9d1ae88ea1502402bedef946f366d23c
-r
-Bapp/src/main/java/com/example/angel1/Adapters/ApprovedAdapter.java,d\8\d8321f974baff4066136ac6930eac6894e945364

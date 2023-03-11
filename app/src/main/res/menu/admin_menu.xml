@@ -7,4 +7,10 @@
         android:icon="@drawable/sign_out_24"
         android:title="Log Out"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_profile"
+        android:orderInCategory="100"
+        android:icon="@drawable/sign_out_24"
+        android:title="Profile"
+        app:showAsAction="never" />
 </menu>

@@ -14,12 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <TextView
             android:id="@+id/imageView3"
             android:layout_width="0dp"
             android:layout_height="90dp"
-            android:src="@drawable/app"
-            android:scaleType="centerCrop"
+            android:textColor="@color/blue"
+            android:text="KENYANS FOR KENYANS"
+            android:textSize="25sp"
+            android:fontFamily="@font/jomolhari"
+            android:gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

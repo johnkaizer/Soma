@@ -39,10 +39,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:src="@drawable/app" />
+            android:textColor="@color/blue"
+            android:text="KENYANS FOR KENYANS"
+            android:textSize="25sp"
+            android:fontFamily="@font/jomolhari"
+            android:gravity="center_horizontal"/>
 
     </androidx.cardview.widget.CardView>
 

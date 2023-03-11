@@ -14,12 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <TextView
             android:id="@+id/imageView3"
             android:layout_width="0dp"
             android:layout_height="90dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/app"
+            android:textColor="@color/blue"
+            android:text="KENYANS FOR KENYANS"
+            android:textSize="25sp"
+            android:fontFamily="@font/jomolhari"
+            android:gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -161,7 +164,7 @@
             android:layout_marginBottom="4dp"
             android:background="@drawable/btn_back_okay"
             android:padding="14dp"
-            android:text="Confirm"
+            android:text="Send Student Notification"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -170,7 +173,7 @@
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintWidth_percent=".4" />
+            app:layout_constraintWidth_percent=".5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
