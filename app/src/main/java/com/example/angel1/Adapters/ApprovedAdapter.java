@@ -57,7 +57,7 @@ public class ApprovedAdapter extends RecyclerView.Adapter<ApprovedAdapter.ViewHo
 
                 ConfirmedModel confirmed = new ConfirmedModel(appTitle,stdDeadline,stdName,stdEmail,stdSchool);
                 dataRef.push().setValue(confirmed);
-                Toast.makeText(context, "Successfully Sent", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Successfully confirmed", Toast.LENGTH_SHORT).show();
 
 
 

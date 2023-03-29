@@ -15,8 +15,6 @@ m
 =app/src/main/java/com/example/angel1/Student/EditProfile.java,c\9\c9143636a7f9313e786cd097ff07b711f86e4465
 m
 =app/src/main/java/com/example/angel1/Model/ApprovedModel.java,d\e\def04eae01e2d43858734dda5e93b9a9f8aa7938
-s
-Capp/src/main/java/com/example/angel1/Activities/SplashActivity.java,0\e\0e65b93ac54140d9c150a28e93555522123b0978
 n
 >app/src/main/java/com/example/angel1/Model/ConfirmedModel.java,4\c\4cd50141c2dde2f28ffd7cfb670cd78656023e6a
 p
@@ -47,13 +45,21 @@ l
 <app/src/main/java/com/example/angel1/Model/DetailsModel.java,3\c\3c0f55ea3b1bc93a8ee650a271e9bc63d2e3339e
 u
 Eapp/src/main/java/com/example/angel1/Adapters/MoreDetailsAdapter.java,8\f\8f57c76ba358614704bef848bf27e4c4ec365a8a
-n
->app/src/main/java/com/example/angel1/ui/home/HomeFragment.java,9\c\9c834a5cd9a33a46a147b40db6b04bc40b4ce38f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 |
 Lapp/src/main/java/com/example/angel1/ui/application/ApplicationFragment.java,c\f\cff5f6f6344938a36018e8dfc75b2c57a84eac77
-l
-<app/src/main/java/com/example/angel1/Auth/LoginActivity.java,8\a\8aad9839fd2a9bfc6e5740b759595b11b2ad57ab
 m
 =app/src/main/java/com/example/angel1/Student/StudentDash.java,1\6\161629be9d1ae88ea1502402bedef946f366d23c
+v
+Fapp/src/main/java/com/example/angel1/Sponsor/AdminProfileFragment.java,a\7\a79769a462ff4b387336f35363fcaf6c31d1b822
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+u
+Eapp/src/main/java/com/example/angel1/Student/ApplicationActivity.java,f\a\fa9a15561c1ae4883630df73cd1da6cc0a5b0092
+~
+Napp/src/main/java/com/example/angel1/Adapters/ApprovedScholarshipAdapter2.java,1\1\11d2f5e3e0f9fc4f3854320caf3cc84510a832e7
+i
+9app/src/main/java/com/example/angel1/Adapters/DBmain.java,3\1\315c1183b528a7292204b81a7dc7036f414cb355
+n
+>app/src/main/java/com/example/angel1/Sponsor/ProfActivity.java,b\7\b7c93e017b1bb364afea8f896b9334e603531a49
+s
+Capp/src/main/java/com/example/angel1/Activities/SplashActivity.java,0\e\0e65b93ac54140d9c150a28e93555522123b0978
